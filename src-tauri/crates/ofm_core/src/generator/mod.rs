@@ -444,11 +444,36 @@ pub fn generate_world(
         team.play_style = play_style_from_str(&tdef.play_style);
         let team_player_start = players.len();
 
+        // Bucket roster entries by position so they map to the correct slot ranges
+        let gk_names: Vec<_> = tdef.roster.iter().filter(|p| p.position == "Goalkeeper").collect();
+        let def_names: Vec<_> = tdef.roster.iter().filter(|p| p.position == "Defender").collect();
+        let mid_names: Vec<_> = tdef.roster.iter().filter(|p| p.position == "Midfielder").collect();
+        let fwd_names: Vec<_> = tdef.roster.iter().filter(|p| p.position == "Forward").collect();
+
         // Generate 22 players
         for j in 0..22 {
-            let nationality = pick_nationality_from_def(&tdef.country, &country_codes, &mut rng);
+            // Slot ranges: GK 0-1, DEF 2-8, MID 9-15, FWD 16-21
+            let roster_entry = if j < 2 {
+                gk_names.get(j)
+            } else if j < 9 {
+                def_names.get(j - 2)
+            } else if j < 16 {
+                mid_names.get(j - 9)
+            } else {
+                fwd_names.get(j - 16)
+            }.copied();
+
+            let nationality = if let Some(rp) = roster_entry {
+                canonicalize_generated_nationality(&rp.nationality)
+            } else {
+                pick_nationality_from_def(&tdef.country, &country_codes, &mut rng)
+            };
             let mut player =
                 generate_random_player_from_def(&team_id, j, &nationality, &names_def, &mut rng);
+            if let Some(rp) = roster_entry {
+                player.full_name = format!("{} {}", rp.first_name, rp.last_name);
+                player.match_name = rp.last_name.to_string();
+            }
             if rng.random_range(0..100) < 12 {
                 player.transfer_listed = true;
             } else if rng.random_range(0..100) < 8 {

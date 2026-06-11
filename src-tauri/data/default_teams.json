@@ -3,23 +3,38 @@
   "description": "Default team templates for world generation",
   "teams": [
     {
-      "name": "London FC",
-      "short_name": "LFC",
+      "name": "Arsenal",
+      "short_name": "ARS",
       "city": "London",
       "country": "ENG",
-      "colors": {
-        "primary": "#dc2626",
-        "secondary": "#ffffff"
-      },
+      "colors": { "primary": "#dc2626", "secondary": "#ffffff" },
       "play_style": "Possession",
-      "stadium_name": "London Arena",
-      "reputation_range": [
-        600,
-        900
-      ],
-      "finance_range": [
-        3000000,
-        10000000
+      "stadium_name": "Emirates Stadium",
+      "reputation_range": [600, 900],
+      "finance_range": [3000000, 10000000],
+      "roster": [
+        {"first_name": "David", "last_name": "Raya", "nationality": "ES", "position": "Goalkeeper"},
+        {"first_name": "Karl", "last_name": "Hein", "nationality": "EE", "position": "Goalkeeper"},
+        {"first_name": "William", "last_name": "Saliba", "nationality": "FR", "position": "Defender"},
+        {"first_name": "Gabriel", "last_name": "Magalhaes", "nationality": "BR", "position": "Defender"},
+        {"first_name": "Ben", "last_name": "White", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Jurrien", "last_name": "Timber", "nationality": "NL", "position": "Defender"},
+        {"first_name": "Cristhian", "last_name": "Mosquera", "nationality": "CO", "position": "Defender"},
+        {"first_name": "Riccardo", "last_name": "Calafiori", "nationality": "IT", "position": "Defender"},
+        {"first_name": "Oleksandr", "last_name": "Zinchenko", "nationality": "UA", "position": "Defender"},
+        {"first_name": "Declan", "last_name": "Rice", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Martin", "last_name": "Odegaard", "nationality": "NO", "position": "Midfielder"},
+        {"first_name": "Mikel", "last_name": "Merino", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Martin", "last_name": "Zubimendi", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Christian", "last_name": "Norgaard", "nationality": "DK", "position": "Midfielder"},
+        {"first_name": "Ethan", "last_name": "Nwaneri", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Myles", "last_name": "Lewis-Skelly", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Bukayo", "last_name": "Saka", "nationality": "ENG", "position": "Forward"},
+        {"first_name": "Gabriel", "last_name": "Martinelli", "nationality": "BR", "position": "Forward"},
+        {"first_name": "Viktor", "last_name": "Gyokeres", "nationality": "SE", "position": "Forward"},
+        {"first_name": "Leandro", "last_name": "Trossard", "nationality": "BE", "position": "Forward"},
+        {"first_name": "Noni", "last_name": "Madueke", "nationality": "ENG", "position": "Forward"},
+        {"first_name": "Jakub", "last_name": "Kiwior", "nationality": "PL", "position": "Forward"}
       ]
     },
     {
@@ -27,299 +42,524 @@
       "short_name": "MCI",
       "city": "Manchester",
       "country": "ENG",
-      "colors": {
-        "primary": "#60a5fa",
-        "secondary": "#1e3a5f"
-      },
+      "colors": { "primary": "#60a5fa", "secondary": "#1e3a5f" },
       "play_style": "Attacking",
-      "stadium_name": "Manchester Arena",
-      "reputation_range": [
-        600,
-        900
-      ],
-      "finance_range": [
-        3000000,
-        10000000
+      "stadium_name": "Etihad Stadium",
+      "reputation_range": [600, 900],
+      "finance_range": [3000000, 10000000],
+      "roster": [
+        {"first_name": "Gianluigi", "last_name": "Donnarumma", "nationality": "IT", "position": "Goalkeeper"},
+        {"first_name": "James", "last_name": "Trafford", "nationality": "ENG", "position": "Goalkeeper"},
+        {"first_name": "Ruben", "last_name": "Dias", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Josko", "last_name": "Gvardiol", "nationality": "HR", "position": "Defender"},
+        {"first_name": "John", "last_name": "Stones", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Marc", "last_name": "Guehi", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Nathan", "last_name": "Ake", "nationality": "NL", "position": "Defender"},
+        {"first_name": "Rayan", "last_name": "Ait-Nouri", "nationality": "DZ", "position": "Defender"},
+        {"first_name": "Rico", "last_name": "Lewis", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Rodri", "last_name": "Hernandez", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Mateo", "last_name": "Kovacic", "nationality": "HR", "position": "Midfielder"},
+        {"first_name": "Bernardo", "last_name": "Silva", "nationality": "PT", "position": "Midfielder"},
+        {"first_name": "Tijjani", "last_name": "Reijnders", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Phil", "last_name": "Foden", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Savinho", "last_name": "Moreira", "nationality": "BR", "position": "Midfielder"},
+        {"first_name": "Rayan", "last_name": "Cherki", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Erling", "last_name": "Haaland", "nationality": "NO", "position": "Forward"},
+        {"first_name": "Omar", "last_name": "Marmoush", "nationality": "EG", "position": "Forward"},
+        {"first_name": "Jeremy", "last_name": "Doku", "nationality": "BE", "position": "Forward"},
+        {"first_name": "Matheus", "last_name": "Nunes", "nationality": "PT", "position": "Forward"},
+        {"first_name": "Nico", "last_name": "Gonzalez", "nationality": "ES", "position": "Forward"},
+        {"first_name": "Antoine", "last_name": "Semenyo", "nationality": "GH", "position": "Forward"}
       ]
     },
     {
-      "name": "Liverpool Athletic",
+      "name": "Liverpool",
       "short_name": "LIV",
       "city": "Liverpool",
       "country": "ENG",
-      "colors": {
-        "primary": "#b91c1c",
-        "secondary": "#fbbf24"
-      },
+      "colors": { "primary": "#b91c1c", "secondary": "#fbbf24" },
       "play_style": "HighPress",
-      "stadium_name": "Liverpool Arena",
-      "reputation_range": [
-        500,
-        850
-      ],
-      "finance_range": [
-        2000000,
-        8000000
+      "stadium_name": "Anfield",
+      "reputation_range": [500, 850],
+      "finance_range": [2000000, 8000000],
+      "roster": [
+        {"first_name": "Alisson", "last_name": "Becker", "nationality": "BR", "position": "Goalkeeper"},
+        {"first_name": "Giorgi", "last_name": "Mamardashvili", "nationality": "GE", "position": "Goalkeeper"},
+        {"first_name": "Virgil", "last_name": "van Dijk", "nationality": "NL", "position": "Defender"},
+        {"first_name": "Ibrahima", "last_name": "Konate", "nationality": "FR", "position": "Defender"},
+        {"first_name": "Joe", "last_name": "Gomez", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Andy", "last_name": "Robertson", "nationality": "SCO", "position": "Defender"},
+        {"first_name": "Conor", "last_name": "Bradley", "nationality": "NIR", "position": "Defender"},
+        {"first_name": "Milos", "last_name": "Kerkez", "nationality": "HU", "position": "Defender"},
+        {"first_name": "Jeremie", "last_name": "Frimpong", "nationality": "NL", "position": "Defender"},
+        {"first_name": "Ryan", "last_name": "Gravenberch", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Alexis", "last_name": "Mac Allister", "nationality": "AR", "position": "Midfielder"},
+        {"first_name": "Dominik", "last_name": "Szoboszlai", "nationality": "HU", "position": "Midfielder"},
+        {"first_name": "Florian", "last_name": "Wirtz", "nationality": "DE", "position": "Midfielder"},
+        {"first_name": "Wataru", "last_name": "Endo", "nationality": "JP", "position": "Midfielder"},
+        {"first_name": "Curtis", "last_name": "Jones", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Harvey", "last_name": "Elliott", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Mohamed", "last_name": "Salah", "nationality": "EG", "position": "Forward"},
+        {"first_name": "Cody", "last_name": "Gakpo", "nationality": "NL", "position": "Forward"},
+        {"first_name": "Alexander", "last_name": "Isak", "nationality": "SE", "position": "Forward"},
+        {"first_name": "Hugo", "last_name": "Ekitike", "nationality": "FR", "position": "Forward"},
+        {"first_name": "Trey", "last_name": "Ngumoha", "nationality": "ENG", "position": "Forward"},
+        {"first_name": "Federico", "last_name": "Chiesa", "nationality": "IT", "position": "Forward"}
       ]
     },
     {
-      "name": "Newcastle Town",
+      "name": "Newcastle United",
       "short_name": "NEW",
       "city": "Newcastle",
       "country": "ENG",
-      "colors": {
-        "primary": "#000000",
-        "secondary": "#ffffff"
-      },
+      "colors": { "primary": "#000000", "secondary": "#ffffff" },
       "play_style": "Counter",
-      "stadium_name": "Newcastle Arena",
-      "reputation_range": [
-        400,
-        750
-      ],
-      "finance_range": [
-        1000000,
-        6000000
+      "stadium_name": "St. James' Park",
+      "reputation_range": [400, 750],
+      "finance_range": [1000000, 6000000],
+      "roster": [
+        {"first_name": "Nick", "last_name": "Pope", "nationality": "ENG", "position": "Goalkeeper"},
+        {"first_name": "Aaron", "last_name": "Ramsdale", "nationality": "ENG", "position": "Goalkeeper"},
+        {"first_name": "Kieran", "last_name": "Trippier", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Lewis", "last_name": "Hall", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Sven", "last_name": "Botman", "nationality": "NL", "position": "Defender"},
+        {"first_name": "Fabian", "last_name": "Schar", "nationality": "CH", "position": "Defender"},
+        {"first_name": "Malick", "last_name": "Thiaw", "nationality": "DE", "position": "Defender"},
+        {"first_name": "Dan", "last_name": "Burn", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Valentino", "last_name": "Livramento", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Bruno", "last_name": "Guimaraes", "nationality": "BR", "position": "Midfielder"},
+        {"first_name": "Sandro", "last_name": "Tonali", "nationality": "IT", "position": "Midfielder"},
+        {"first_name": "Joelinton", "last_name": "Cassio", "nationality": "BR", "position": "Midfielder"},
+        {"first_name": "Jacob", "last_name": "Murphy", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Joe", "last_name": "Willock", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Jacob", "last_name": "Ramsey", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Emil", "last_name": "Krafth", "nationality": "SE", "position": "Midfielder"},
+        {"first_name": "Yoane", "last_name": "Wissa", "nationality": "CD", "position": "Forward"},
+        {"first_name": "Anthony", "last_name": "Elanga", "nationality": "SE", "position": "Forward"},
+        {"first_name": "Harvey", "last_name": "Barnes", "nationality": "ENG", "position": "Forward"},
+        {"first_name": "Nick", "last_name": "Woltemade", "nationality": "DE", "position": "Forward"},
+        {"first_name": "William", "last_name": "Osula", "nationality": "DK", "position": "Forward"},
+        {"first_name": "Alexander", "last_name": "Isak", "nationality": "SE", "position": "Forward"}
       ]
     },
     {
-      "name": "Madrid Real",
-      "short_name": "MAD",
+      "name": "Real Madrid",
+      "short_name": "RMA",
       "city": "Madrid",
       "country": "ES",
-      "colors": {
-        "primary": "#ffffff",
-        "secondary": "#d4af37"
-      },
+      "colors": { "primary": "#ffffff", "secondary": "#d4af37" },
       "play_style": "Possession",
-      "stadium_name": "Madrid Arena",
-      "reputation_range": [
-        700,
-        900
-      ],
-      "finance_range": [
-        5000000,
-        10000000
+      "stadium_name": "Estadio Santiago Bernabeu",
+      "reputation_range": [700, 900],
+      "finance_range": [5000000, 10000000],
+      "roster": [
+        {"first_name": "Thibaut", "last_name": "Courtois", "nationality": "BE", "position": "Goalkeeper"},
+        {"first_name": "Andriy", "last_name": "Lunin", "nationality": "UA", "position": "Goalkeeper"},
+        {"first_name": "Dani", "last_name": "Carvajal", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Eder", "last_name": "Militao", "nationality": "BR", "position": "Defender"},
+        {"first_name": "Antonio", "last_name": "Rudiger", "nationality": "DE", "position": "Defender"},
+        {"first_name": "Raul", "last_name": "Asencio", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Dean", "last_name": "Huijsen", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Ferland", "last_name": "Mendy", "nationality": "FR", "position": "Defender"},
+        {"first_name": "Alvaro", "last_name": "Carreras", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Trent", "last_name": "Alexander-Arnold", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Federico", "last_name": "Valverde", "nationality": "UY", "position": "Midfielder"},
+        {"first_name": "Aurelien", "last_name": "Tchouameni", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Eduardo", "last_name": "Camavinga", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Jude", "last_name": "Bellingham", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Arda", "last_name": "Guler", "nationality": "TR", "position": "Midfielder"},
+        {"first_name": "Dani", "last_name": "Ceballos", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Kylian", "last_name": "Mbappe", "nationality": "FR", "position": "Forward"},
+        {"first_name": "Vinicius", "last_name": "Junior", "nationality": "BR", "position": "Forward"},
+        {"first_name": "Rodrygo", "last_name": "Goes", "nationality": "BR", "position": "Forward"},
+        {"first_name": "Brahim", "last_name": "Diaz", "nationality": "MA", "position": "Forward"},
+        {"first_name": "Franco", "last_name": "Mastantuono", "nationality": "AR", "position": "Forward"},
+        {"first_name": "Fran", "last_name": "Garcia", "nationality": "ES", "position": "Forward"}
       ]
     },
     {
-      "name": "Barcelona FC",
+      "name": "FC Barcelona",
       "short_name": "BAR",
       "city": "Barcelona",
       "country": "ES",
-      "colors": {
-        "primary": "#9f1239",
-        "secondary": "#1d4ed8"
-      },
+      "colors": { "primary": "#9f1239", "secondary": "#1d4ed8" },
       "play_style": "Attacking",
-      "stadium_name": "Barcelona Arena",
-      "reputation_range": [
-        700,
-        900
-      ],
-      "finance_range": [
-        5000000,
-        10000000
+      "stadium_name": "Spotify Camp Nou",
+      "reputation_range": [700, 900],
+      "finance_range": [5000000, 10000000],
+      "roster": [
+        {"first_name": "Marc-Andre", "last_name": "ter Stegen", "nationality": "DE", "position": "Goalkeeper"},
+        {"first_name": "Wojciech", "last_name": "Szczesny", "nationality": "PL", "position": "Goalkeeper"},
+        {"first_name": "Jules", "last_name": "Kounde", "nationality": "FR", "position": "Defender"},
+        {"first_name": "Ronald", "last_name": "Araujo", "nationality": "UY", "position": "Defender"},
+        {"first_name": "Pau", "last_name": "Cubarsi", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Andreas", "last_name": "Christensen", "nationality": "DK", "position": "Defender"},
+        {"first_name": "Alejandro", "last_name": "Balde", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Eric", "last_name": "Garcia", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Joao", "last_name": "Cancelo", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Pedri", "last_name": "Gonzalez", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Frenkie", "last_name": "de Jong", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Gavi", "last_name": "Paez", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Marc", "last_name": "Casado", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Fermin", "last_name": "Lopez", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Dani", "last_name": "Olmo", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Marc", "last_name": "Bernal", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Raphinha", "last_name": "Belloli", "nationality": "BR", "position": "Forward"},
+        {"first_name": "Lamine", "last_name": "Yamal", "nationality": "ES", "position": "Forward"},
+        {"first_name": "Robert", "last_name": "Lewandowski", "nationality": "PL", "position": "Forward"},
+        {"first_name": "Ferran", "last_name": "Torres", "nationality": "ES", "position": "Forward"},
+        {"first_name": "Marcus", "last_name": "Rashford", "nationality": "ENG", "position": "Forward"},
+        {"first_name": "Joan", "last_name": "Garcia", "nationality": "ES", "position": "Forward"}
       ]
     },
     {
-      "name": "Munich Bayern",
-      "short_name": "MUN",
+      "name": "Bayern Munich",
+      "short_name": "BAY",
       "city": "Munich",
       "country": "DE",
-      "colors": {
-        "primary": "#dc2626",
-        "secondary": "#1e3a5f"
-      },
+      "colors": { "primary": "#dc2626", "secondary": "#1e3a5f" },
       "play_style": "HighPress",
-      "stadium_name": "Munich Arena",
-      "reputation_range": [
-        700,
-        900
-      ],
-      "finance_range": [
-        5000000,
-        10000000
+      "stadium_name": "Allianz Arena",
+      "reputation_range": [700, 900],
+      "finance_range": [5000000, 10000000],
+      "roster": [
+        {"first_name": "Manuel", "last_name": "Neuer", "nationality": "DE", "position": "Goalkeeper"},
+        {"first_name": "Sven", "last_name": "Ulreich", "nationality": "DE", "position": "Goalkeeper"},
+        {"first_name": "Dayot", "last_name": "Upamecano", "nationality": "FR", "position": "Defender"},
+        {"first_name": "Min-jae", "last_name": "Kim", "nationality": "KR", "position": "Defender"},
+        {"first_name": "Jonathan", "last_name": "Tah", "nationality": "DE", "position": "Defender"},
+        {"first_name": "Alphonso", "last_name": "Davies", "nationality": "CA", "position": "Defender"},
+        {"first_name": "Raphael", "last_name": "Guerreiro", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Hiroki", "last_name": "Ito", "nationality": "JP", "position": "Defender"},
+        {"first_name": "Joshua", "last_name": "Kimmich", "nationality": "DE", "position": "Defender"},
+        {"first_name": "Leon", "last_name": "Goretzka", "nationality": "DE", "position": "Midfielder"},
+        {"first_name": "Jamal", "last_name": "Musiala", "nationality": "DE", "position": "Midfielder"},
+        {"first_name": "Konrad", "last_name": "Laimer", "nationality": "AT", "position": "Midfielder"},
+        {"first_name": "Aleksandar", "last_name": "Pavlovic", "nationality": "DE", "position": "Midfielder"},
+        {"first_name": "Tom", "last_name": "Bischof", "nationality": "DE", "position": "Midfielder"},
+        {"first_name": "Leroy", "last_name": "Sane", "nationality": "DE", "position": "Midfielder"},
+        {"first_name": "Thomas", "last_name": "Muller", "nationality": "DE", "position": "Midfielder"},
+        {"first_name": "Harry", "last_name": "Kane", "nationality": "ENG", "position": "Forward"},
+        {"first_name": "Serge", "last_name": "Gnabry", "nationality": "DE", "position": "Forward"},
+        {"first_name": "Michael", "last_name": "Olise", "nationality": "FR", "position": "Forward"},
+        {"first_name": "Luis", "last_name": "Diaz", "nationality": "CO", "position": "Forward"},
+        {"first_name": "Nicolas", "last_name": "Jackson", "nationality": "SN", "position": "Forward"},
+        {"first_name": "Mathys", "last_name": "Tel", "nationality": "FR", "position": "Forward"}
       ]
     },
     {
-      "name": "Dortmund BV",
-      "short_name": "DOR",
+      "name": "Borussia Dortmund",
+      "short_name": "BVB",
       "city": "Dortmund",
       "country": "DE",
-      "colors": {
-        "primary": "#eab308",
-        "secondary": "#000000"
-      },
+      "colors": { "primary": "#eab308", "secondary": "#000000" },
       "play_style": "Counter",
-      "stadium_name": "Dortmund Arena",
-      "reputation_range": [
-        500,
-        800
-      ],
-      "finance_range": [
-        2000000,
-        7000000
+      "stadium_name": "Signal Iduna Park",
+      "reputation_range": [500, 800],
+      "finance_range": [2000000, 7000000],
+      "roster": [
+        {"first_name": "Gregor", "last_name": "Kobel", "nationality": "CH", "position": "Goalkeeper"},
+        {"first_name": "Alexander", "last_name": "Meyer", "nationality": "DE", "position": "Goalkeeper"},
+        {"first_name": "Nico", "last_name": "Schlotterbeck", "nationality": "DE", "position": "Defender"},
+        {"first_name": "Waldemar", "last_name": "Anton", "nationality": "DE", "position": "Defender"},
+        {"first_name": "Niklas", "last_name": "Sule", "nationality": "DE", "position": "Defender"},
+        {"first_name": "Ramy", "last_name": "Bensebaini", "nationality": "DZ", "position": "Defender"},
+        {"first_name": "Julian", "last_name": "Ryerson", "nationality": "NO", "position": "Defender"},
+        {"first_name": "Emre", "last_name": "Can", "nationality": "DE", "position": "Defender"},
+        {"first_name": "Yan", "last_name": "Couto", "nationality": "BR", "position": "Defender"},
+        {"first_name": "Marcel", "last_name": "Sabitzer", "nationality": "AT", "position": "Midfielder"},
+        {"first_name": "Julian", "last_name": "Brandt", "nationality": "DE", "position": "Midfielder"},
+        {"first_name": "Felix", "last_name": "Nmecha", "nationality": "DE", "position": "Midfielder"},
+        {"first_name": "Jobe", "last_name": "Bellingham", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Salih", "last_name": "Ozcan", "nationality": "TR", "position": "Midfielder"},
+        {"first_name": "Carney", "last_name": "Chukwuemeka", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Daniel", "last_name": "Svensson", "nationality": "SE", "position": "Midfielder"},
+        {"first_name": "Serhou", "last_name": "Guirassy", "nationality": "GN", "position": "Forward"},
+        {"first_name": "Karim", "last_name": "Adeyemi", "nationality": "DE", "position": "Forward"},
+        {"first_name": "Maximilian", "last_name": "Beier", "nationality": "DE", "position": "Forward"},
+        {"first_name": "Fabio", "last_name": "Silva", "nationality": "PT", "position": "Forward"},
+        {"first_name": "Patrick", "last_name": "Drewes", "nationality": "DE", "position": "Forward"},
+        {"first_name": "Donyell", "last_name": "Malen", "nationality": "NL", "position": "Forward"}
       ]
     },
     {
-      "name": "Paris Étoile",
-      "short_name": "PAR",
+      "name": "Paris Saint-Germain",
+      "short_name": "PSG",
       "city": "Paris",
       "country": "FR",
-      "colors": {
-        "primary": "#1e3a5f",
-        "secondary": "#dc2626"
-      },
+      "colors": { "primary": "#1e3a5f", "secondary": "#dc2626" },
       "play_style": "Attacking",
-      "stadium_name": "Paris Arena",
-      "reputation_range": [
-        700,
-        900
-      ],
-      "finance_range": [
-        5000000,
-        10000000
+      "stadium_name": "Parc des Princes",
+      "reputation_range": [700, 900],
+      "finance_range": [5000000, 10000000],
+      "roster": [
+        {"first_name": "Matvey", "last_name": "Safonov", "nationality": "RU", "position": "Goalkeeper"},
+        {"first_name": "Lucas", "last_name": "Chevalier", "nationality": "FR", "position": "Goalkeeper"},
+        {"first_name": "Marquinhos", "last_name": "Correa", "nationality": "BR", "position": "Defender"},
+        {"first_name": "Willian", "last_name": "Pacho", "nationality": "EC", "position": "Defender"},
+        {"first_name": "Ilya", "last_name": "Zabarnyi", "nationality": "UA", "position": "Defender"},
+        {"first_name": "Lucas", "last_name": "Hernandez", "nationality": "FR", "position": "Defender"},
+        {"first_name": "Nuno", "last_name": "Mendes", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Achraf", "last_name": "Hakimi", "nationality": "MA", "position": "Defender"},
+        {"first_name": "Lucas", "last_name": "Beraldo", "nationality": "BR", "position": "Defender"},
+        {"first_name": "Vitinha", "last_name": "Ferreira", "nationality": "PT", "position": "Midfielder"},
+        {"first_name": "Joao", "last_name": "Neves", "nationality": "PT", "position": "Midfielder"},
+        {"first_name": "Warren", "last_name": "Zaire-Emery", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Fabian", "last_name": "Ruiz", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Kang-in", "last_name": "Lee", "nationality": "KR", "position": "Midfielder"},
+        {"first_name": "Senny", "last_name": "Mayulu", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Desire", "last_name": "Doue", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Khvicha", "last_name": "Kvaratskhelia", "nationality": "GE", "position": "Forward"},
+        {"first_name": "Bradley", "last_name": "Barcola", "nationality": "FR", "position": "Forward"},
+        {"first_name": "Ousmane", "last_name": "Dembele", "nationality": "FR", "position": "Forward"},
+        {"first_name": "Goncalo", "last_name": "Ramos", "nationality": "PT", "position": "Forward"},
+        {"first_name": "Quentin", "last_name": "Ndjantou", "nationality": "FR", "position": "Forward"},
+        {"first_name": "Ibrahim", "last_name": "Mbaye", "nationality": "SN", "position": "Forward"}
       ]
     },
     {
-      "name": "Lyon Olympique",
-      "short_name": "LYO",
+      "name": "Olympique Lyon",
+      "short_name": "OL",
       "city": "Lyon",
       "country": "FR",
-      "colors": {
-        "primary": "#1d4ed8",
-        "secondary": "#ffffff"
-      },
+      "colors": { "primary": "#1d4ed8", "secondary": "#ffffff" },
       "play_style": "Balanced",
-      "stadium_name": "Lyon Arena",
-      "reputation_range": [
-        400,
-        700
-      ],
-      "finance_range": [
-        1000000,
-        5000000
+      "stadium_name": "Groupama Stadium",
+      "reputation_range": [400, 700],
+      "finance_range": [1000000, 5000000],
+      "roster": [
+        {"first_name": "Dominik", "last_name": "Greif", "nationality": "SK", "position": "Goalkeeper"},
+        {"first_name": "Remy", "last_name": "Descamps", "nationality": "FR", "position": "Goalkeeper"},
+        {"first_name": "Nicolas", "last_name": "Tagliafico", "nationality": "AR", "position": "Defender"},
+        {"first_name": "Abner", "last_name": "Vinicius", "nationality": "BR", "position": "Defender"},
+        {"first_name": "Moussa", "last_name": "Niakhate", "nationality": "SN", "position": "Defender"},
+        {"first_name": "Clinton", "last_name": "Mata", "nationality": "AO", "position": "Defender"},
+        {"first_name": "Hans", "last_name": "Hateboer", "nationality": "NL", "position": "Defender"},
+        {"first_name": "Noham", "last_name": "Kamara", "nationality": "FR", "position": "Defender"},
+        {"first_name": "Ainsley", "last_name": "Maitland-Niles", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Orel", "last_name": "Mangala", "nationality": "BE", "position": "Midfielder"},
+        {"first_name": "Tanner", "last_name": "Tessmann", "nationality": "US", "position": "Midfielder"},
+        {"first_name": "Corentin", "last_name": "Tolisso", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Tyler", "last_name": "Morton", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Noah", "last_name": "Nartey", "nationality": "DK", "position": "Midfielder"},
+        {"first_name": "Pavel", "last_name": "Sulc", "nationality": "CZ", "position": "Midfielder"},
+        {"first_name": "Ruben", "last_name": "Kluivert", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Malick", "last_name": "Fofana", "nationality": "BE", "position": "Forward"},
+        {"first_name": "Ernest", "last_name": "Nuamah", "nationality": "GH", "position": "Forward"},
+        {"first_name": "Rachid", "last_name": "Ghezzal", "nationality": "DZ", "position": "Forward"},
+        {"first_name": "Roman", "last_name": "Yaremchuk", "nationality": "UA", "position": "Forward"},
+        {"first_name": "Martin", "last_name": "Satriano", "nationality": "UY", "position": "Forward"},
+        {"first_name": "Georges", "last_name": "Mikautadze", "nationality": "GE", "position": "Forward"}
       ]
     },
     {
-      "name": "Milan Rossoneri",
+      "name": "AC Milan",
       "short_name": "MIL",
       "city": "Milan",
       "country": "IT",
-      "colors": {
-        "primary": "#dc2626",
-        "secondary": "#000000"
-      },
+      "colors": { "primary": "#dc2626", "secondary": "#000000" },
       "play_style": "Defensive",
-      "stadium_name": "Milan Arena",
-      "reputation_range": [
-        600,
-        850
-      ],
-      "finance_range": [
-        3000000,
-        8000000
+      "stadium_name": "Stadio San Siro",
+      "reputation_range": [600, 850],
+      "finance_range": [3000000, 8000000],
+      "roster": [
+        {"first_name": "Mike", "last_name": "Maignan", "nationality": "FR", "position": "Goalkeeper"},
+        {"first_name": "Lorenzo", "last_name": "Torriani", "nationality": "IT", "position": "Goalkeeper"},
+        {"first_name": "Strahinja", "last_name": "Pavlovic", "nationality": "RS", "position": "Defender"},
+        {"first_name": "Fikayo", "last_name": "Tomori", "nationality": "ENG", "position": "Defender"},
+        {"first_name": "Matteo", "last_name": "Gabbia", "nationality": "IT", "position": "Defender"},
+        {"first_name": "Koni", "last_name": "De Winter", "nationality": "BE", "position": "Defender"},
+        {"first_name": "Pervis", "last_name": "Estupinian", "nationality": "EC", "position": "Defender"},
+        {"first_name": "Davide", "last_name": "Bartesaghi", "nationality": "IT", "position": "Defender"},
+        {"first_name": "Theo", "last_name": "Hernandez", "nationality": "FR", "position": "Defender"},
+        {"first_name": "Youssouf", "last_name": "Fofana", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Samuele", "last_name": "Ricci", "nationality": "IT", "position": "Midfielder"},
+        {"first_name": "Adrien", "last_name": "Rabiot", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Ardon", "last_name": "Jashari", "nationality": "CH", "position": "Midfielder"},
+        {"first_name": "Ruben", "last_name": "Loftus-Cheek", "nationality": "ENG", "position": "Midfielder"},
+        {"first_name": "Alexis", "last_name": "Saelemaekers", "nationality": "BE", "position": "Midfielder"},
+        {"first_name": "Luka", "last_name": "Modric", "nationality": "HR", "position": "Midfielder"},
+        {"first_name": "Rafael", "last_name": "Leao", "nationality": "PT", "position": "Forward"},
+        {"first_name": "Christian", "last_name": "Pulisic", "nationality": "US", "position": "Forward"},
+        {"first_name": "Christopher", "last_name": "Nkunku", "nationality": "FR", "position": "Forward"},
+        {"first_name": "Santiago", "last_name": "Gimenez", "nationality": "MX", "position": "Forward"},
+        {"first_name": "Niclas", "last_name": "Fullkrug", "nationality": "DE", "position": "Forward"},
+        {"first_name": "Noah", "last_name": "Okafor", "nationality": "CH", "position": "Forward"}
       ]
     },
     {
-      "name": "Rome Gladiators",
+      "name": "AS Roma",
       "short_name": "ROM",
       "city": "Rome",
       "country": "IT",
-      "colors": {
-        "primary": "#eab308",
-        "secondary": "#7c2d12"
-      },
+      "colors": { "primary": "#eab308", "secondary": "#7c2d12" },
       "play_style": "Counter",
-      "stadium_name": "Rome Arena",
-      "reputation_range": [
-        400,
-        700
-      ],
-      "finance_range": [
-        1500000,
-        6000000
+      "stadium_name": "Stadio Olimpico",
+      "reputation_range": [400, 700],
+      "finance_range": [1500000, 6000000],
+      "roster": [
+        {"first_name": "Mile", "last_name": "Svilar", "nationality": "RS", "position": "Goalkeeper"},
+        {"first_name": "Pierluigi", "last_name": "Gollini", "nationality": "IT", "position": "Goalkeeper"},
+        {"first_name": "Gianluca", "last_name": "Mancini", "nationality": "IT", "position": "Defender"},
+        {"first_name": "Evan", "last_name": "Ndicka", "nationality": "CI", "position": "Defender"},
+        {"first_name": "Mario", "last_name": "Hermoso", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Daniele", "last_name": "Ghilardi", "nationality": "IT", "position": "Defender"},
+        {"first_name": "Angelino", "last_name": "Valera", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Zeki", "last_name": "Celik", "nationality": "TR", "position": "Defender"},
+        {"first_name": "Devyne", "last_name": "Rensch", "nationality": "NL", "position": "Defender"},
+        {"first_name": "Bryan", "last_name": "Cristante", "nationality": "IT", "position": "Midfielder"},
+        {"first_name": "Manu", "last_name": "Kone", "nationality": "FR", "position": "Midfielder"},
+        {"first_name": "Niccolo", "last_name": "Pisilli", "nationality": "IT", "position": "Midfielder"},
+        {"first_name": "Lorenzo", "last_name": "Pellegrini", "nationality": "IT", "position": "Midfielder"},
+        {"first_name": "Neil", "last_name": "El Aynaoui", "nationality": "MA", "position": "Midfielder"},
+        {"first_name": "Bryan", "last_name": "Zaragoza", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Konstantinos", "last_name": "Tsimikas", "nationality": "GR", "position": "Midfielder"},
+        {"first_name": "Paulo", "last_name": "Dybala", "nationality": "AR", "position": "Forward"},
+        {"first_name": "Artem", "last_name": "Dovbyk", "nationality": "UA", "position": "Forward"},
+        {"first_name": "Stephan", "last_name": "El Shaarawy", "nationality": "IT", "position": "Forward"},
+        {"first_name": "Matias", "last_name": "Soule", "nationality": "AR", "position": "Forward"},
+        {"first_name": "Evan", "last_name": "Ferguson", "nationality": "IE", "position": "Forward"},
+        {"first_name": "Nicola", "last_name": "Zalewski", "nationality": "PL", "position": "Forward"}
       ]
     },
     {
-      "name": "Amsterdam United",
-      "short_name": "AMS",
+      "name": "Ajax",
+      "short_name": "AJA",
       "city": "Amsterdam",
       "country": "NL",
-      "colors": {
-        "primary": "#dc2626",
-        "secondary": "#ffffff"
-      },
+      "colors": { "primary": "#dc2626", "secondary": "#ffffff" },
       "play_style": "Attacking",
-      "stadium_name": "Amsterdam Arena",
-      "reputation_range": [
-        500,
-        800
-      ],
-      "finance_range": [
-        2000000,
-        7000000
+      "stadium_name": "Johan Cruijff ArenA",
+      "reputation_range": [500, 800],
+      "finance_range": [2000000, 7000000],
+      "roster": [
+        {"first_name": "Maarten", "last_name": "Paes", "nationality": "NL", "position": "Goalkeeper"},
+        {"first_name": "Vitezslav", "last_name": "Jaros", "nationality": "CZ", "position": "Goalkeeper"},
+        {"first_name": "Youri", "last_name": "Baas", "nationality": "NL", "position": "Defender"},
+        {"first_name": "Josip", "last_name": "Sutalo", "nationality": "HR", "position": "Defender"},
+        {"first_name": "Ko", "last_name": "Itakura", "nationality": "JP", "position": "Defender"},
+        {"first_name": "Owen", "last_name": "Wijndal", "nationality": "NL", "position": "Defender"},
+        {"first_name": "Anton", "last_name": "Gaaei", "nationality": "DK", "position": "Defender"},
+        {"first_name": "Takehiro", "last_name": "Tomiyasu", "nationality": "JP", "position": "Defender"},
+        {"first_name": "Lucas", "last_name": "Rosa", "nationality": "BR", "position": "Defender"},
+        {"first_name": "Youri", "last_name": "Regeer", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Kian", "last_name": "Fitz-Jim", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Davy", "last_name": "Klaassen", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Jorthy", "last_name": "Mokio", "nationality": "BE", "position": "Midfielder"},
+        {"first_name": "Oscar", "last_name": "Gloukh", "nationality": "IL", "position": "Midfielder"},
+        {"first_name": "Rayane", "last_name": "Bounida", "nationality": "MA", "position": "Midfielder"},
+        {"first_name": "Steven", "last_name": "Berghuis", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Mika", "last_name": "Godts", "nationality": "BE", "position": "Forward"},
+        {"first_name": "Kasper", "last_name": "Dolberg", "nationality": "DK", "position": "Forward"},
+        {"first_name": "Wout", "last_name": "Weghorst", "nationality": "NL", "position": "Forward"},
+        {"first_name": "Maher", "last_name": "Carrizo", "nationality": "AR", "position": "Forward"},
+        {"first_name": "Oliver", "last_name": "Edvardsen", "nationality": "NO", "position": "Forward"},
+        {"first_name": "Donyell", "last_name": "Malen", "nationality": "NL", "position": "Forward"}
       ]
     },
     {
-      "name": "Lisbon Sporting",
-      "short_name": "LIS",
+      "name": "Sporting CP",
+      "short_name": "SCP",
       "city": "Lisbon",
       "country": "PT",
-      "colors": {
-        "primary": "#16a34a",
-        "secondary": "#ffffff"
-      },
+      "colors": { "primary": "#16a34a", "secondary": "#ffffff" },
       "play_style": "Possession",
-      "stadium_name": "Lisbon Arena",
-      "reputation_range": [
-        500,
-        800
-      ],
-      "finance_range": [
-        2000000,
-        7000000
+      "stadium_name": "Estadio Jose Alvalade",
+      "reputation_range": [500, 800],
+      "finance_range": [2000000, 7000000],
+      "roster": [
+        {"first_name": "Rui", "last_name": "Silva", "nationality": "PT", "position": "Goalkeeper"},
+        {"first_name": "Joao", "last_name": "Virginia", "nationality": "PT", "position": "Goalkeeper"},
+        {"first_name": "Ousmane", "last_name": "Diomande", "nationality": "CI", "position": "Defender"},
+        {"first_name": "Goncalo", "last_name": "Inacio", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Zeno", "last_name": "Debast", "nationality": "BE", "position": "Defender"},
+        {"first_name": "Eduardo", "last_name": "Quaresma", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Maxi", "last_name": "Araujo", "nationality": "UY", "position": "Defender"},
+        {"first_name": "Nuno", "last_name": "Santos", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Ivan", "last_name": "Fresneda", "nationality": "ES", "position": "Defender"},
+        {"first_name": "Morten", "last_name": "Hjulmand", "nationality": "DK", "position": "Midfielder"},
+        {"first_name": "Hidemasa", "last_name": "Morita", "nationality": "JP", "position": "Midfielder"},
+        {"first_name": "Daniel", "last_name": "Braganca", "nationality": "PT", "position": "Midfielder"},
+        {"first_name": "Pedro", "last_name": "Goncalves", "nationality": "PT", "position": "Midfielder"},
+        {"first_name": "Francisco", "last_name": "Trincao", "nationality": "PT", "position": "Midfielder"},
+        {"first_name": "Geovany", "last_name": "Quenda", "nationality": "PT", "position": "Midfielder"},
+        {"first_name": "Geny", "last_name": "Catamo", "nationality": "MZ", "position": "Midfielder"},
+        {"first_name": "Luis", "last_name": "Suarez", "nationality": "CO", "position": "Forward"},
+        {"first_name": "Fotis", "last_name": "Ioannidis", "nationality": "GR", "position": "Forward"},
+        {"first_name": "Luis", "last_name": "Guilherme", "nationality": "BR", "position": "Forward"},
+        {"first_name": "Ricardo", "last_name": "Mangas", "nationality": "PT", "position": "Forward"},
+        {"first_name": "Giorgi", "last_name": "Kochorashvili", "nationality": "GE", "position": "Forward"},
+        {"first_name": "Souleymane", "last_name": "Faye", "nationality": "SN", "position": "Forward"}
       ]
     },
     {
-      "name": "Porto Dragões",
+      "name": "FC Porto",
       "short_name": "POR",
       "city": "Porto",
       "country": "PT",
-      "colors": {
-        "primary": "#1d4ed8",
-        "secondary": "#ffffff"
-      },
+      "colors": { "primary": "#1d4ed8", "secondary": "#ffffff" },
       "play_style": "Defensive",
-      "stadium_name": "Porto Arena",
-      "reputation_range": [
-        500,
-        800
-      ],
-      "finance_range": [
-        2000000,
-        7000000
+      "stadium_name": "Estadio do Dragao",
+      "reputation_range": [500, 800],
+      "finance_range": [2000000, 7000000],
+      "roster": [
+        {"first_name": "Diogo", "last_name": "Costa", "nationality": "PT", "position": "Goalkeeper"},
+        {"first_name": "Claudio", "last_name": "Ramos", "nationality": "PT", "position": "Goalkeeper"},
+        {"first_name": "Nehuen", "last_name": "Perez", "nationality": "AR", "position": "Defender"},
+        {"first_name": "Jan", "last_name": "Bednarek", "nationality": "PL", "position": "Defender"},
+        {"first_name": "Thiago", "last_name": "Silva", "nationality": "BR", "position": "Defender"},
+        {"first_name": "Francisco", "last_name": "Moura", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Zaidu", "last_name": "Sanusi", "nationality": "NG", "position": "Defender"},
+        {"first_name": "Alberto", "last_name": "Costa", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Martim", "last_name": "Fernandes", "nationality": "PT", "position": "Defender"},
+        {"first_name": "Alan", "last_name": "Varela", "nationality": "AR", "position": "Midfielder"},
+        {"first_name": "Seko", "last_name": "Fofana", "nationality": "CI", "position": "Midfielder"},
+        {"first_name": "Gabri", "last_name": "Veiga", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Pablo", "last_name": "Rosario", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Rodrigo", "last_name": "Mora", "nationality": "PT", "position": "Midfielder"},
+        {"first_name": "Borja", "last_name": "Sainz", "nationality": "ES", "position": "Midfielder"},
+        {"first_name": "Jakub", "last_name": "Kiwior", "nationality": "PL", "position": "Midfielder"},
+        {"first_name": "Samu", "last_name": "Aghehowa", "nationality": "ES", "position": "Forward"},
+        {"first_name": "William", "last_name": "Gomes", "nationality": "BR", "position": "Forward"},
+        {"first_name": "Terem", "last_name": "Moffi", "nationality": "NG", "position": "Forward"},
+        {"first_name": "Luuk", "last_name": "de Jong", "nationality": "NL", "position": "Forward"},
+        {"first_name": "Deniz", "last_name": "Gul", "nationality": "TR", "position": "Forward"},
+        {"first_name": "Diogo", "last_name": "Leite", "nationality": "PT", "position": "Forward"}
       ]
     },
     {
-      "name": "Brussels Royal",
-      "short_name": "BRU",
+      "name": "Anderlecht",
+      "short_name": "AND",
       "city": "Brussels",
       "country": "BE",
-      "colors": {
-        "primary": "#7c3aed",
-        "secondary": "#fbbf24"
-      },
+      "colors": { "primary": "#7c3aed", "secondary": "#fbbf24" },
       "play_style": "Balanced",
-      "stadium_name": "Brussels Arena",
-      "reputation_range": [
-        400,
-        700
-      ],
-      "finance_range": [
-        1000000,
-        5000000
+      "stadium_name": "Lotto Park",
+      "reputation_range": [400, 700],
+      "finance_range": [1000000, 5000000],
+      "roster": [
+        {"first_name": "Colin", "last_name": "Coosemans", "nationality": "BE", "position": "Goalkeeper"},
+        {"first_name": "Justin", "last_name": "Heekeren", "nationality": "DE", "position": "Goalkeeper"},
+        {"first_name": "Killian", "last_name": "Sardella", "nationality": "BE", "position": "Defender"},
+        {"first_name": "Marco", "last_name": "Kana", "nationality": "BE", "position": "Defender"},
+        {"first_name": "Mihajlo", "last_name": "Ilic", "nationality": "RS", "position": "Defender"},
+        {"first_name": "Ludwig", "last_name": "Augustinsson", "nationality": "SE", "position": "Defender"},
+        {"first_name": "Moussa", "last_name": "Diarra", "nationality": "ML", "position": "Defender"},
+        {"first_name": "Thomas", "last_name": "Foket", "nationality": "BE", "position": "Defender"},
+        {"first_name": "Ali", "last_name": "Maamar", "nationality": "MA", "position": "Defender"},
+        {"first_name": "Mats", "last_name": "Rits", "nationality": "BE", "position": "Midfielder"},
+        {"first_name": "Yari", "last_name": "Verschaeren", "nationality": "BE", "position": "Midfielder"},
+        {"first_name": "Thorgan", "last_name": "Hazard", "nationality": "BE", "position": "Midfielder"},
+        {"first_name": "Mario", "last_name": "Stroeykens", "nationality": "BE", "position": "Midfielder"},
+        {"first_name": "Anas", "last_name": "Tajaouart", "nationality": "MA", "position": "Midfielder"},
+        {"first_name": "Enric", "last_name": "Llansana", "nationality": "NL", "position": "Midfielder"},
+        {"first_name": "Nathan", "last_name": "De Cat", "nationality": "BE", "position": "Midfielder"},
+        {"first_name": "Alexis", "last_name": "Flips", "nationality": "FR", "position": "Forward"},
+        {"first_name": "Danylo", "last_name": "Sikan", "nationality": "UA", "position": "Forward"},
+        {"first_name": "Cesar", "last_name": "Huerta", "nationality": "MX", "position": "Forward"},
+        {"first_name": "Ibrahim", "last_name": "Konate", "nationality": "ML", "position": "Forward"},
+        {"first_name": "Adriano", "last_name": "Bertaccini", "nationality": "BE", "position": "Forward"},
+        {"first_name": "Ilay", "last_name": "Camara", "nationality": "SN", "position": "Forward"}
       ]
     }
   ]

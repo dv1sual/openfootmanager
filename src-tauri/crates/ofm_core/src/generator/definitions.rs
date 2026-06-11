@@ -7,6 +7,17 @@ use super::data::{NATIONALITY_POOLS, TEAM_TEMPLATES};
 // Definition file types (JSON-serialisable)
 // ---------------------------------------------------------------------------
 
+/// A single player entry in a team roster template.
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct PlayerNameDef {
+    pub first_name: String,
+    pub last_name: String,
+    pub nationality: String,
+    /// "Goalkeeper", "Defender", "Midfielder", or "Forward"
+    #[serde(default)]
+    pub position: String,
+}
+
 /// Name pools definition file format.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct NamesDefinition {
@@ -51,6 +62,8 @@ pub struct TeamDef {
     pub reputation_range: Option<[u32; 2]>,
     #[serde(default)]
     pub finance_range: Option<[i64; 2]>,
+    #[serde(default)]
+    pub roster: Vec<PlayerNameDef>,
 }
 
 fn default_play_style() -> String {
@@ -103,15 +116,7 @@ pub(super) fn default_teams_definition() -> TeamsDefinition {
             .iter()
             .map(|t| TeamDef {
                 name: t.name.to_string(),
-                short_name: t
-                    .name
-                    .split_whitespace()
-                    .filter_map(|w| w.chars().next())
-                    .collect::<String>()
-                    .to_uppercase()
-                    .chars()
-                    .take(3)
-                    .collect(),
+                short_name: t.short_name.to_string(),
                 city: t.city.to_string(),
                 country: t.country.to_string(),
                 colors: TeamColorsDef {
@@ -119,9 +124,19 @@ pub(super) fn default_teams_definition() -> TeamsDefinition {
                     secondary: t.colors.1.to_string(),
                 },
                 play_style: t.play_style.to_string(),
-                stadium_name: format!("{} Arena", t.city),
+                stadium_name: if t.stadium_name.is_empty() {
+                    format!("{} Arena", t.city)
+                } else {
+                    t.stadium_name.to_string()
+                },
                 reputation_range: Some([300, 900]),
                 finance_range: Some([500_000, 10_000_000]),
+                roster: t.roster.iter().map(|p| PlayerNameDef {
+                    first_name: p.first_name.to_string(),
+                    last_name: p.last_name.to_string(),
+                    nationality: p.nationality.to_string(),
+                    position: p.position.to_string(),
+                }).collect(),
             })
             .collect(),
     }

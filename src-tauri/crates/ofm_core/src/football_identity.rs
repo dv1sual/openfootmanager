@@ -185,9 +185,12 @@ fn infer_legacy_british_team_nation(team: &Team) -> Option<String> {
 
     match (team_name, city) {
         ("London FC", "London")
+        | ("Arsenal", "London")
         | ("Manchester City", "Manchester")
         | ("Liverpool Athletic", "Liverpool")
-        | ("Newcastle Town", "Newcastle") => Some("ENG".to_string()),
+        | ("Liverpool", "Liverpool")
+        | ("Newcastle Town", "Newcastle")
+        | ("Newcastle United", "Newcastle") => Some("ENG".to_string()),
         _ => None,
     }
 }
