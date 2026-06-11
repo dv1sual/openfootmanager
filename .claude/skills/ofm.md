@@ -11,10 +11,10 @@ Tauri + React (frontend) + Rust (backend via `src-tauri`) football management ga
 
 Building an automated functional test foundation (Luca doing QA for the upstream dev).
 
-- **PR #195 OPEN, awaiting dev review** — `dv1sual:test/season-scenario-foundation` → upstream `develop`. Seeded world generation + invariant-based season scenario tests (Phase 0). Clean, test-only, no `.claude/`, no co-author trailer.
+- **PR #195 OPEN, awaiting dev review** — `dv1sual:test/season-scenario-foundation` → upstream `develop`. Seeded world generation + invariant-based season scenario tests (Phase 0). Clean, test-only, no `.claude/`, no co-author trailer. Closes issue **#196** (the foundation enhancement issue).
 - **Branches:** `test/season-scenario-foundation` = the clean PR branch (off upstream develop, 4 files only). `feature/scenario-tests` = working branch with the `.claude/` skill + history (NEVER goes upstream).
 - **Phase 0 done:** reproducible starting world + `full_season_holds_invariants` + reproducibility tests. All `ofm_core` tests green.
-- **Phase 1 PROPOSED, blocked on dev sign-off:** full-season determinism via a `seed: u64` on `Game` + per-turn RNG from `(seed, date)`, threaded through the engine + ~44 turn-pipeline `rand::rng()` sites (engine first). Do NOT start until the dev blesses the "RNG on `Game`" direction. A tracking issue is on hold until the dev replies to #195.
+- **Phase 1 PROPOSED, blocked on dev sign-off:** full-season determinism via a `seed: u64` on `Game` + per-turn RNG from `(seed, date)`, threaded through the engine + ~44 turn-pipeline `rand::rng()` sites (engine first). Do NOT start until the dev blesses the "RNG on `Game`" direction. Its own tracking issue is on hold until the dev replies to #195 (separate from #196, which is the Phase 0 foundation issue).
 - **Next action:** wait for dev's answer on PR #195, then decide Phase 1 / tracking issue.
 
 ## Running the app
