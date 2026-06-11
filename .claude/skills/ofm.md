@@ -77,6 +77,27 @@ OpenFoot Manager vX.X.X-alpha
 - Rust: descriptive names, strong types, docstrings on public functions
 - Frontend: modular components, TailwindCSS for styling, no `any` types
 
+## UI design direction (Luca's standing preference — apply by default, no need to ask)
+
+Luca's bar for UI is **even, clean, neat, consistent**. Default to this for every frontend change:
+
+- **Even spacing above all.** One uniform gap between repeated elements (attribute rows, table rows, stat boxes). Do NOT distribute / `space-between` to fill height — prefer a fixed even gap and accept empty space at the bottom of shorter blocks over uneven gaps.
+- **Equal-size, aligned cards.** Cards side by side are the same height (`sm:auto-rows-fr`) and aligned. Keep a consistent column count (e.g. the player attributes grid is always 2 columns, even for goalkeepers).
+- **Uniform page of cards.** Wide/tabular cards (stat strips, tables) span full width. Below the header row, stack data cards full-width in a single-column grid so the page reads as a uniform stack. NEVER leave a stray `col-span-*` on a card in a single-column grid — it spawns an implicit column and makes sibling cards unequal widths (this exact bug made one card narrower than the rest).
+- **Align content to its header.** In a table, header and body cells share the same alignment (default left). Never mix left/right alignment within one table.
+- **Even column widths.** Give a table's data columns equal widths so the spacing between them is uniform; a name/label column may take the remainder.
+- **No jitter, no magic.** Nothing that shifts on re-render (no `Math.random()` for widths — derive a stable value). Document any arbitrary value (`max-w-[196px]`) with a short comment.
+- **Responsive.** Grids adapt by breakpoint (`grid-cols-1 sm:grid-cols-2 ...`).
+
+When unsure: tighter, more aligned, more uniform. Run the app (`npm run tauri dev`) and get visual sign-off rather than assuming.
+
+## i18n (hard rule)
+
+- Every user-facing string comes from `t("...")`. Never hardcode text, and never ship a key with no translation — a missing key renders the raw key (e.g. `common.clear`) in the UI, which is a visible bug.
+- When adding a key, add it to ALL locale files in `src/i18n/locales/` (en, de, es, fr, it, pt, pt-BR, ru, zh-CN), actually translated, not copied from English.
+- Unit suffixes follow the terse style of existing keys (`finances.perWeekSuffix = "/wk"`, `playerProfile.yearsSuffix = "y"`).
+- Tests often mock `react-i18next` per file — when you rename or add a key used in a tested component, update that test's mock too.
+
 ## Testing a PR
 
 1. Check out the branch / confirm it's merged into `develop`.

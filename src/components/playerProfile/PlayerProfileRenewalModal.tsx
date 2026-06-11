@@ -211,7 +211,7 @@ export default function PlayerProfileRenewalModal({
             </Button>
           ) : (
             <>
-              <Button className="flex-1" variant="danger" onClick={onClose}>
+              <Button className="flex-1" variant="ghost" onClick={onClose}>
                 {t("common.cancel")}
               </Button>
               <Button

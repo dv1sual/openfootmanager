@@ -140,7 +140,7 @@ export default function PlayerProfileAdvancedStatsCard({
     };
 
     return (
-        <Card className="lg:col-span-2">
+        <Card>
             <CardHeader>{labels.title}</CardHeader>
             <CardBody>
                 <div className="space-y-3">

@@ -76,6 +76,7 @@ export default function SquadRosterView({
 }: SquadRosterViewProps) {
   const { t } = useTranslation();
   const weeklySuffix = t("finances.perWeekSuffix");
+  const yearsSuffix = t("playerProfile.yearsSuffix");
   const myTeam = gameState.teams.find((team) => team.manager_id === managerId);
   const [playerSearch, setPlayerSearch] = useState("");
   const [positionFilter, setPositionFilter] = useState("All");
@@ -562,6 +563,7 @@ export default function SquadRosterView({
                           ) : null}
                         </div>
                       </td>
+                      {/* max-w caps the name column so long full names truncate instead of stretching the row */}
                       <td className="py-3 px-4 align-middle max-w-[196px]">
                         <div className="font-semibold text-sm text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors truncate" title={player.full_name}>
                           {player.full_name}
@@ -602,10 +604,13 @@ export default function SquadRosterView({
                         {player.contract_end ? (
                           <>
                             <span className="font-medium text-gray-700 dark:text-gray-300">
-                              {getContractYearsRemaining(
-                                player.contract_end,
-                                gameState.clock.current_date,
-                              )}y
+                              {parseFloat(
+                                getContractYearsRemaining(
+                                  player.contract_end,
+                                  gameState.clock.current_date,
+                                ),
+                              )}
+                              {yearsSuffix}
                             </span>
                             {" · "}
                             {player.contract_end}
