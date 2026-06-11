@@ -108,6 +108,21 @@ Key file: `src-tauri/crates/ofm_core/tests/scenario_tests.rs`.
 - **Path to full determinism (not done):** put a `seed: u64` on `Game`, derive a per-turn RNG from `(seed, date)`, and thread `&mut rng` through the engine + turn subsystems instead of `rand::rng()`. This keeps save/load trivial (persist one u64). Get maintainer sign-off before doing this — it's a cross-crate change.
 - Invariant helpers to reuse/extend: `assert_game_invariants` (referential integrity, 3-1-0 points maths, goals-for == goals-against, finished fixtures carry results, finances in range).
 
+## Planned next tests (after PR #195 lands)
+
+Do NOT start until #195 is resolved. These all build on `make_scenario_game(seed)` + `assert_game_invariants`; if review changes that fixture, rebase onto the final version first. All are invariant-based (no determinism needed) and one self-contained PR each.
+
+**Tier 1 (biggest gaps):**
+1. **Multi-season rollover.** GAP: `process_end_of_season` is NOT in the daily `process_day` loop. It is gated by `end_of_season::is_season_complete(&game)` and orchestrated by the `advance_to_next_season` command (`src/commands/season.rs`). So the current full-season test plays all fixtures but never crosses a season boundary. New test: advance until `is_season_complete`, call `process_end_of_season`, then play into season 2. Assert: season number incremented; new fixtures all `Scheduled` (no stale results); standings reset; players aged one year (`apply_seasonal_aging`); retirements/youth intake keep referential integrity; invariants hold after N more days. Run 2 seasons.
+2. **Save/load round-trip mid-season.** `Game` derives `Serialize`/`Deserialize`. Advance ~60 days, `serde_json` round-trip, assert invariants hold on the loaded game + key fields match (clock date, player count, standings, finances), then keep playing the loaded game for N days without panic.
+
+**Tier 2 (targeted):**
+3. **Squad/contract lifecycle integrity.** Extend the invariant lib: transfer-log entries reference real teams/players; transferred player's `team_id` == destination; expired contract never leaves a player both rostered and free; free agents (`team_id = None`) otherwise valid.
+4. **Live-match-day path.** Exercise `create_live_match` + `finish_live_match_day` (the path used when the user plays their own match live; `process_day` skips it by auto-simming). Assert standings update for that match + invariants hold. No scenario coverage today.
+5. **Injury recovery bounds.** Over a season: no injured player has absurd `days_remaining`; injuries progress to 0 and clear.
+
+Suggested order: #1 and #2 first (largest holes, quick reviews), then #3-#5.
+
 ## Testing a PR
 
 1. Check out the branch / confirm it's merged into `develop`.
