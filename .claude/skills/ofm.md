@@ -64,18 +64,39 @@ OpenFoot Manager vX.X.X-alpha
 
 ## Contributing
 
-- PRs target the `develop` branch via fork & pull.
+- PRs target the `develop` branch via fork & pull. Origin is the `dv1sual` fork; upstream is `openfootmanager/openfootmanager`.
 - Reference the related issue in the PR description.
 - If there's no issue for a new feature, open one first.
+- Open the PR off a branch cut from **current upstream `develop`** (it moves), not from a stale local base. Confirm upstream has not changed the files you touched.
+
+**Commit messages:**
+- **Never** add a `Co-Authored-By` trailer (no Claude/AI co-author lines). The author is Luca only.
+- Imperative subject, conventional prefix where it fits (`test:`, `feat:`, `fix:`).
+
+**Privacy — keep AI tooling out of the public repo:**
+- The `.claude/` directory (this skill file included) must **NEVER** reach `openfootmanager/openfootmanager`. It lives on local/fork branches only.
+- When preparing an upstream PR, branch off upstream `develop` and bring over **only** the relevant source/test files — never `.claude/`. Verify with `git status` before committing.
 
 **Before opening a PR:**
-- Rust: `cargo fmt` and `cargo clippy` (no warnings)
+- Rust: `cargo fmt` and `cargo clippy`. Caveat: the committed repo is **not** fully fmt-clean under recent rustfmt (e.g. `contracts.rs` import ordering), and the crate already carries ~40 pre-existing clippy warnings. Only format the files you changed and aim for **no new** warnings; do not sweep unrelated reformatting into your PR (revert stray `cargo fmt` edits to files you didn't touch).
 - Frontend: `npm test`
 - Backend: `cd src-tauri && cargo test --workspace`
 
 **Code conventions:**
 - Rust: descriptive names, strong types, docstrings on public functions
 - Frontend: modular components, TailwindCSS for styling, no `any` types
+
+## Automated test foundation (scenario tests)
+
+Functional/end-to-end coverage lives at the `ofm_core` layer, not the UI. The command layer is thin plumbing, so testing `ofm_core` directly exercises the real game logic. UI E2E (tauri-driver) is a thin future smoke layer, not the primary coverage.
+
+Key file: `src-tauri/crates/ofm_core/tests/scenario_tests.rs`.
+
+- **Seeded worlds:** `generate_world_data_seeded(seed)` / `generate_world_seeded(seed)` give a reproducible starting world. The shipped "New Game" path still uses entropy (`generate_world_data`). `make_scenario_game(seed)` is the shared fixture builder.
+- **Determinism status:** the *starting world* is reproducible; the *season trajectory* is NOT yet. The match engine (`crates/engine/src/engine/mod.rs`) and ~44 turn-pipeline sites still call `rand::rng()` (ambient). So scenario assertions must be **outcome-independent invariants**, never exact post-season values.
+- **Why HashMap order mattered:** name pools are a `HashMap`; sorting `country_codes` (`sorted_country_codes`) was required for seeded gen to be reproducible. Watch for other HashMap-iteration-order dependencies.
+- **Path to full determinism (not done):** put a `seed: u64` on `Game`, derive a per-turn RNG from `(seed, date)`, and thread `&mut rng` through the engine + turn subsystems instead of `rand::rng()`. This keeps save/load trivial (persist one u64). Get maintainer sign-off before doing this — it's a cross-crate change.
+- Invariant helpers to reuse/extend: `assert_game_invariants` (referential integrity, 3-1-0 points maths, goals-for == goals-against, finished fixtures carry results, finances in range).
 
 ## Testing a PR
 
