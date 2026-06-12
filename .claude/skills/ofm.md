@@ -35,15 +35,16 @@ The maintainer (sturdy-robot) gates our QA testing plan on this PR: once its rev
 
 ### UI refinements
 
-- **Branch `feature/ui-refinements`** (on the `dv1sual` fork, not upstream). Working branch for UI polish; no upstream PR yet.
-- **Done & pushed:** player career history table now right-aligns the stat columns (header + body together) so values sit flush to the right edge with even spacing (commit `a108845`). Visually signed off by Luca.
-- **Note:** this branch still carries the older divergent copy of this skill in history; the unified master now lives here.
+- **PR #199 OPEN** — `dv1sual:feature/ui-polish-profile-squad` → upstream `develop`. `feat: refine player profile and squad layouts`. Two clean commits (a `feat` for the layouts, a `fix` closing **#197**), frontend-only, no `.claude`, no co-author trailer.
+  - Contents: career-history table with right-aligned stat columns; attributes grouped into equal-height cards (placeholder bars now deterministic, not `Math.random`); advanced-stats card reuses the attributes card style, one card per metric (redesigned on the PR branch); season/advanced/recent cards stacked full-width (stray `col-span` removed); renewal modal equal-width buttons; squad roster padding/truncation/contract-column/XI-dot polish; `news.allTeams` + `renew`/`season`/`yearsSuffix` keys across all 9 locales.
+  - Two presentation changes flagged in the PR body: squad contract column reworked (`2.5y · date` on one line), XI indicator now shows a dot for every player (amber for subs).
+- **Branch lineage:** `feature/ui-refinements` = the fork working branch (carries this master skill + commit `d69bcfd`, the real English club/stadium names kept for local testing). `d69bcfd` is GPL/trademark-sensitive and must NEVER go upstream; the PR branch was cut fresh from upstream `develop` to exclude it (and `.claude`).
 
 ### News overhaul (roadmap issue #11, 0.3.x-beta)
 
 Decided to do a **UX review first** before any backend feature work (variety pass / rivalry news).
 
-- **Issue #197 FILED** (upstream) — News team-filter dropdown shows the raw key `news.allTeams` instead of a readable label. Missing in all 9 locales. Reproduced with >1 team in the news. Quick fix: add the translated key everywhere. Not started.
+- **Issue #197 — FIX IN REVIEW (PR #199).** News team-filter dropdown showed the raw key `news.allTeams`. The translated key was added to all 9 locales and bundled into the UI PR #199 (`Closes #197`). Awaiting merge.
 - **BLOCKER for the empty-filter UX bug:** can't reproduce the "filter to an empty result shows a blank void" issue because news from the future is appearing (saw 6 July items while the game clock was 12 June). News does not look bounded by the current date. Needs its own investigation/ticket before the empty-state work can be tested. Not yet filed.
 - **Backend feature work (variety pass, rivalry news, trash talk) is on hold** until the UX issues above are cleared.
 
