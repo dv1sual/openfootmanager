@@ -17,11 +17,11 @@ Living worklog — the source of truth for where each workstream stands (branche
 
 Building an automated functional test foundation.
 
-- **PR #195 OPEN, awaiting dev review** — `dv1sual:test/season-scenario-foundation` → upstream `develop`. Seeded world generation + invariant-based season scenario tests (Phase 0). Clean, test-only, no `.claude/`, no co-author trailer. Closes issue **#196** (the foundation enhancement issue).
-- **Branches:** `test/season-scenario-foundation` = the clean PR branch (off upstream develop, 4 files only). `feature/scenario-tests` = working branch with the `.claude/` skill + history (NEVER goes upstream).
-- **Phase 0 done:** reproducible starting world + `full_season_holds_invariants` + reproducibility tests. All `ofm_core` tests green.
-- **Phase 1 PROPOSED, blocked on dev sign-off:** full-season determinism via a `seed: u64` on `Game` + per-turn RNG from `(seed, date)`, threaded through the engine + ~44 turn-pipeline `rand::rng()` sites (engine first). Do NOT start until the dev blesses the "RNG on `Game`" direction. Its own tracking issue is on hold until the dev replies to #195 (separate from #196, which is the Phase 0 foundation issue).
-- **Next action:** wait for dev's answer on PR #195, then decide Phase 1 / tracking issue.
+- **PR #195 MERGED** (2026-06-12, merge commit `158b9dc`) into upstream `develop`. Seeded world generation + invariant-based season scenario tests (Phase 0). Issue **#196 auto-closed**. Phase 0 coverage is now upstream.
+- **Branches:** `test/season-scenario-foundation` = the merged PR branch (can be deleted now). `feature/scenario-tests` = working branch with the `.claude/` skill + history (NEVER goes upstream).
+- **Phase 0 done & merged:** reproducible starting world + `full_season_holds_invariants` + reproducibility tests. All `ofm_core` tests green.
+- **Phase 1 PROPOSED, still blocked on dev sign-off:** full-season determinism via a `seed: u64` on `Game` + per-turn RNG from `(seed, date)`, threaded through the engine + ~44 turn-pipeline `rand::rng()` sites (engine first). The #195 merge does NOT bless this direction; do NOT start until the dev explicitly approves "RNG on `Game`". Tracking issue still to be opened once the direction is confirmed.
+- **Next action:** the "Planned next tests" below are now UNBLOCKED (#195 landed) — pick one (start with Tier 1 #1/#2), branch off current upstream `develop`, rebase onto the merged `make_scenario_game` fixture. Separately, get the dev's call on the Phase 1 RNG direction.
 
 ### UI refinements
 
@@ -149,9 +149,9 @@ Key file: `src-tauri/crates/ofm_core/tests/scenario_tests.rs`.
 - **Path to full determinism (not done):** put a `seed: u64` on `Game`, derive a per-turn RNG from `(seed, date)`, and thread `&mut rng` through the engine + turn subsystems instead of `rand::rng()`. This keeps save/load trivial (persist one u64). Get maintainer sign-off before doing this — it's a cross-crate change.
 - Invariant helpers to reuse/extend: `assert_game_invariants` (referential integrity, 3-1-0 points maths, goals-for == goals-against, finished fixtures carry results, finances in range).
 
-## Planned next tests (after PR #195 lands)
+## Planned next tests (UNBLOCKED — #195 merged 2026-06-12)
 
-Do NOT start until #195 is resolved. These all build on `make_scenario_game(seed)` + `assert_game_invariants`; if review changes that fixture, rebase onto the final version first. All are invariant-based (no determinism needed) and one self-contained PR each.
+Now clear to start. These all build on `make_scenario_game(seed)` + `assert_game_invariants` as merged into `develop`; branch off current upstream `develop` so you're on the final fixture. All are invariant-based (no determinism needed) and one self-contained PR each.
 
 **Tier 1 (biggest gaps):**
 1. **Multi-season rollover.** GAP: `process_end_of_season` is NOT in the daily `process_day` loop. It is gated by `end_of_season::is_season_complete(&game)` and orchestrated by the `advance_to_next_season` command (`src/commands/season.rs`). So the current full-season test plays all fixtures but never crosses a season boundary. New test: advance until `is_season_complete`, call `process_end_of_season`, then play into season 2. Assert: season number incremented; new fixtures all `Scheduled` (no stale results); standings reset; players aged one year (`apply_seasonal_aging`); retirements/youth intake keep referential integrity; invariants hold after N more days. Run 2 seasons.
