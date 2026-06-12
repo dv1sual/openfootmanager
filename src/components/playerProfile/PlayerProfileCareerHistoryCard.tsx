@@ -24,10 +24,10 @@ export default function PlayerProfileCareerHistoryCard({
                         <thead>
                             <tr className="border-b border-gray-200 dark:border-navy-500 text-gray-400 dark:text-gray-500 font-heading font-bold uppercase tracking-wider">
                                 <th className="pb-2 pr-4 text-left font-bold">{t("common.team")}</th>
-                                <th className="pb-2 w-[14%] text-left font-bold">{t("playerProfile.season")}</th>
-                                <th className="pb-2 w-[14%] text-left font-bold">{t("playerProfile.apps")}</th>
-                                <th className="pb-2 w-[14%] text-left font-bold">{t("playerProfile.goals")}</th>
-                                <th className="pb-2 w-[14%] text-left font-bold">{t("playerProfile.assists")}</th>
+                                <th className="pb-2 w-[14%] text-right font-bold">{t("playerProfile.season")}</th>
+                                <th className="pb-2 w-[14%] text-right font-bold">{t("playerProfile.apps")}</th>
+                                <th className="pb-2 w-[14%] text-right font-bold">{t("playerProfile.goals")}</th>
+                                <th className="pb-2 w-[14%] text-right font-bold">{t("playerProfile.assists")}</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100 dark:divide-navy-600">
@@ -36,16 +36,16 @@ export default function PlayerProfileCareerHistoryCard({
                                     <td className="py-2 pr-4 font-semibold text-gray-800 dark:text-gray-200 truncate">
                                         {entry.team_name}
                                     </td>
-                                    <td className="py-2 text-gray-400 dark:text-gray-500 tabular-nums">
+                                    <td className="py-2 text-right text-gray-400 dark:text-gray-500 tabular-nums">
                                         {entry.season}/{entry.season + 1}
                                     </td>
-                                    <td className="py-2 text-gray-500 dark:text-gray-400 tabular-nums">
+                                    <td className="py-2 text-right text-gray-500 dark:text-gray-400 tabular-nums">
                                         {entry.appearances}
                                     </td>
-                                    <td className="py-2 text-gray-500 dark:text-gray-400 tabular-nums">
+                                    <td className="py-2 text-right text-gray-500 dark:text-gray-400 tabular-nums">
                                         {entry.goals}
                                     </td>
-                                    <td className="py-2 text-gray-500 dark:text-gray-400 tabular-nums">
+                                    <td className="py-2 text-right text-gray-500 dark:text-gray-400 tabular-nums">
                                         {entry.assists}
                                     </td>
                                 </tr>
