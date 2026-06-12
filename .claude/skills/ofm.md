@@ -23,6 +23,16 @@ Building an automated functional test foundation.
 - **Phase 1 PROPOSED, still blocked on dev sign-off:** full-season determinism via a `seed: u64` on `Game` + per-turn RNG from `(seed, date)`, threaded through the engine + ~44 turn-pipeline `rand::rng()` sites (engine first). The #195 merge does NOT bless this direction; do NOT start until the dev explicitly approves "RNG on `Game`". Tracking issue still to be opened once the direction is confirmed.
 - **Next action:** the "Planned next tests" below are now UNBLOCKED (#195 landed) — pick one (start with Tier 1 #1/#2), branch off current upstream `develop`, rebase onto the merged `make_scenario_game` fixture. Separately, get the dev's call on the Phase 1 RNG direction.
 
+### MCP server — agent-driven QA enabler (upstream PR #186)
+
+The maintainer (sturdy-robot) gates our QA testing plan on this PR: once its review is addressed and he merges it, we proceed.
+
+- **PR #186 `RichardoC:feat/mcp-server` → `develop`: CHANGES_REQUESTED by sturdy-robot (2026-06-12).** Two refactors before merge: (1) `tools.rs` should reuse/generalise the `real_tool` macro instead of hand-rolled definitions; (2) split the 2,500-line `tools_impl.rs` into a module so LLM edits don't eat the whole file as context. Functionality is not in question. Author RichardoC to address; then merge.
+- **What it is:** behind a `mcp` Cargo feature flag (`cargo build --features mcp`; normal builds untouched). Runs headless (`--no-gui`), exposes **78 tools across 14 categories** over JSON-RPC 2.0 on SSE at `http://localhost:<port>/mcp`. Two modes: `sandbox` (all tools) and `competition` (restricted: no new-game/load/export, team pre-assigned via `--mcp-auto-start world.json[,team_id]`). MCP tools call the **same `_internal` fns as the Tauri commands** — no duplicate business logic.
+- **What it means for our QA:** this is the **agent-driven functional/E2E layer** that complements the `ofm_core` scenario tests. An agent (Claude) can drive a real headless game through the real command + `StateManager` layer end-to-end — advance time, set tactics, transfer, scout, read state — and assert behaviour. It exercises the command layer + state/concurrency (clone-inside-lock) that `scenario_tests.rs` never touches. **Same invariant discipline:** runs are non-deterministic (ambient `rand::rng()`), so assert outcome-independent invariants, not exact values. It will **not** catch pure-UI bugs (React render, raw i18n keys like #197, layout) — no DOM — so it complements manual UI QA + vitest, not replaces them.
+- **Reuse for known regressions:** the future-dated-news bug (news beyond the game clock) is checkable via `info_news` after `time_advance` — a good first MCP regression check once merged.
+- **Next action:** wait for #186 to merge, then stand up an MCP QA harness — build `--features mcp`, export a `world.json` from the GUI, run an instance headless, drive it via MCP, and assert invariants over a season.
+
 ### UI refinements
 
 - **Branch `feature/ui-refinements`** (on the `dv1sual` fork, not upstream). Working branch for UI polish; no upstream PR yet.
